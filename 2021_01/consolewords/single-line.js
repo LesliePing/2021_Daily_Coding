@@ -21,9 +21,22 @@ function ProgressBar (description, bar_length) {
         empty += '░'
       }
     }
-
-    var cmdText = this.description + ':' + (100 * percent).toFixed(2) + '%' + chalk.green(cell) + empty + ' ' + opts.completed + '/' + opts.total
-    slog(cmdText)
+    //  占位符处理
+    var percentage = (100 * percent).toFixed(2)
+    var colonPlus
+    switch (percentage.toString().length) {
+      case 4:
+        colonPlus = ':  '
+        break;
+      case 5:
+        colonPlus = ': '
+        break;
+      case 6:
+        colonPlus = ':'
+        break;
+    }
+    var cmdText = this.description + colonPlus + percentage + '% ' + chalk.green(cell) + empty + (opts.completed > 9 ? ' ' : '  ') + opts.completed + '/' + opts.total
+    slog(cmdText.trim())
     slog.clear()
   }
 }
