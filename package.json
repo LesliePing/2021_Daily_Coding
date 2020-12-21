@@ -1,0 +1,27 @@
+{
+  "name": "2021_daily_coding",
+  "version": "1.0.0",
+  "description": "Just some interesting code snippets.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LesliePing/2021_Daily_Coding.git"
+  },
+  "keywords": [
+    "code",
+    "snippets"
+  ],
+  "author": "Leslie",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LesliePing/2021_Daily_Coding/issues"
+  },
+  "homepage": "https://github.com/LesliePing/2021_Daily_Coding#readme",
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "single-line-log": "^1.1.2"
+  }
+}
