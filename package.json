@@ -26,6 +26,7 @@
     "express": "^4.17.1",
     "file-stream-rotator": "^0.5.7",
     "morgan": "^1.10.0",
-    "single-line-log": "^1.1.2"
+    "single-line-log": "^1.1.2",
+    "typescript": "^4.1.3"
   }
 }
