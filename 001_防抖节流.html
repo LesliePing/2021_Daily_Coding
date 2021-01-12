@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <p>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+  </p>
+  <p>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+  </p>
+  <p>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+  </p>
+  <p>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+  </p>
+  <p>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+    我是文字<br>
+  </p>
+</body>
+<script>
+  /*************************** 防抖函数 *******************************/
+  function debounce(fn, delay) {
+    let timer = null // 闭包记录时间
+    return function () {
+      if (timer) clearTimeout(timer)
+      timer = setTimeout(fn, delay)
+    }
+  }
+  /*************************** 节流函数 *******************************/
+  function throttle(fn, delay) {
+    let valid = true
+    return function () {
+      if (!valid) return false // 定义一个开关
+      valid = false
+      setTimeout(() => {
+        fn()
+        valid = true
+      }, delay);
+    }
+  }
+  /*************************** 打印位置函数 *******************************/
+  function logPos() {
+    var scrollTop = document.body.scrollTop || document.documentElement.scrollTop
+    console.log('滚动条位置:' + scrollTop + '>>>>');
+  }
+  /*************************** 监听滚动事件 *******************************/
+  // window.onscroll = debounce(logPos, 300)
+  window.onscroll = throttle(logPos, 300)
+</script>
+
+</html>
