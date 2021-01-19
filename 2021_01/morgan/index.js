@@ -4,6 +4,7 @@ var fs = require('fs');
 var FileStreamRotator = require('file-stream-rotator');
 // 处理post请求，需要body-parser
 var bodyParser = require('body-parser')
+
 var app = new express();
 app.use(bodyParser.json({ limit: '50mb' }));
 //设置日志文件目录
