@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div>
+    <input type="text" id="getInputVal">
+    <button onclick="handleFun()">校验手机</button>
+    <button onclick="handleSite()">校验网址</button>
+    <button onclick="handleTelPhone()">校验固定电话</button>
+  </div>
+  <div>
+    <textarea name="" id="showArea" cols="30" rows="10">
+
+    </textarea>
+  </div>
+</body>
+<script>
+  function handleFun(){
+    phoneNumber()
+  }
+  // 校验手机号码
+  function phoneNumber() {
+    let inputVal = document.getElementById("getInputVal").value
+    let result = /^0?(13|14|15|16|17|18|19)[0-9]{9}$/.test(Number(inputVal))
+    let resultHK = /^(5[1-6,9]|6[0-9]|9[0-8])\d{6}$/.test(Number(inputVal))
+    document.getElementById("showArea").innerHTML = "校验结果是：" + result
+  }
+  // 校验网址
+  function handleSite() {
+    let inputVal = document.getElementById("getInputVal").value
+    let result = /^(http|ftp|https):\/\/[\w\-_]+(\.[\w\-_]+)+([\w\-\.,@?^=%&:/~\+#]*[\w\-\@?^=%&/~\+#])?/.test(inputVal)
+    document.getElementById("showArea").innerHTML = "校验结果是：" + result
+  }
+  // 校验固定号码
+  function handleTelPhone() {
+    let inputVal = document.getElementById("getInputVal").value
+    let result = /0\d{2,3}[-_－—\s]?\d{7,8}/.test(inputVal)
+    document.getElementById("showArea").innerHTML = "校验结果是：" + result
+  }
+</script>
+</html>
